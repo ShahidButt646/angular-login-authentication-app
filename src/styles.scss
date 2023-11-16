@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Open+Sans&family=Princess+Sofia&family=Roboto:wght@500&display=swap");
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+* {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  transition-duration: 0.3s;
+}
+body {
+  background-color: #2c3639;
+}
+button {
+  padding: 6px 14px;
+  background-color: black;
+  border-radius: 5px;
+  border: 1px solid white;
+  transition-duration: 0.3s;
+}
+button:hover {
+  background-color: grey;
+  opacity: 0.8;
+}
+button:disabled {
+  filter: brightness(0.7);
+  cursor: not-allowed;
+}
+
+.is-invalid {
+  border: 1px solid red !important;
+  color: red !important;
+}

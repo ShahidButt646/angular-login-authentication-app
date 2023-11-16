@@ -1,0 +1,57 @@
+<div class="login-con row">
+    <div>
+        <form (ngSubmit)="handleSubmission()" #authForm="ngForm"
+            class="col-4 d-flex flex-column justify-content-between align-items-between">
+            <h4 class="text-center p-0 m-0">
+                {{isLoginForm ? "Login Form" : "Signup Form"}}
+            </h4>
+            <hr class="p-0 m-0 pb-4 pt-1">
+            <span *ngIf="isLoginForm; then loginForm; else signUpForm"></span>
+            <ng-template #loginForm>
+                <label for="userName" class="d-flex justify-content-between align-items-center">
+                    User Name:
+                    <input #userName="ngModel" id="userName" name="userName" type="email"
+                        [(ngModel)]="userAuthForm.userName" required autocomplete placeholder="enter email.."
+                        [class.is-invalid]="userName.touched && userName.invalid">
+                </label>
+                <label for="passowrd" class="d-flex justify-content-between align-items-center">
+                    Password:
+                    <input #password="ngModel" id="passowrd" name="passowrd" type="password"
+                        [(ngModel)]="userAuthForm.password" required autocomplete placeholder="enter passowrd..."
+                        [class.is-invalid]="password.touched && password.invalid">
+                </label>
+            </ng-template>
+            <ng-template #signUpForm>
+                <label for="firstName" class="d-flex justify-content-between align-items-center">
+                    First Name:
+                    <input #firstName="ngModel" id="firstName" name="firstName" type="text"
+                        [(ngModel)]="userAuthForm.firstName" required autocomplete placeholder="enter first name.."
+                        [class.is-invalid]="firstName.touched && firstName.invalid">
+                </label>
+                <label for="lastName" class="d-flex justify-content-between align-items-center">
+                    Last Name:
+                    <input #lastName="ngModel" id="lastName" name="lastName" type="text"
+                        [(ngModel)]="userAuthForm.lastName" required autocomplete placeholder="enter last name.."
+                        [class.is-invalid]="lastName.touched && lastName.invalid">
+                </label>
+                <label for="userName" class="d-flex justify-content-between align-items-center">
+                    User Name:
+                    <input #userName="ngModel" id="userName" name="userName" type="email"
+                        [(ngModel)]="userAuthForm.userName" required autocomplete placeholder="enter email.."
+                        [class.is-invalid]="userName.touched && userName.invalid">
+                </label>
+                <label for="passowrd" class="d-flex justify-content-between align-items-center">
+                    Password:
+                    <input #password="ngModel" id="passowrd" name="passowrd" type="password"
+                        [(ngModel)]="userAuthForm.password" required autocomplete placeholder="enter passowrd..."
+                        [class.is-invalid]="password.touched && password.invalid">
+                </label>
+            </ng-template>
+            <div class="m-auto ">
+                <button class="me-1" [disabled]="authForm.form.invalid">Submit</button>
+                <button (click)="setIsLoginForm(!isLoginForm)" type="button">{{isLoginForm ? "SignUp" :
+                    "Login"}}</button>
+            </div>
+        </form>
+    </div>
+</div>

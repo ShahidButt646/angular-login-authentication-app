@@ -1,0 +1,48 @@
+.login-con {
+  border: 1px solid white;
+  min-height: 100vh;
+  position: relative;
+  form {
+    border: 2px solid white;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 24px 18px;
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    // animation: glow 2s infinite; /* Adjust the duration as needed */
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.8),
+      0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(52, 152, 219, 0.4);
+    label {
+      margin-bottom: 10px;
+    }
+    input {
+      background-color: transparent;
+      border: 1px solid white;
+      border-radius: 5px;
+      padding: 6px 16px;
+      width: 75%;
+    }
+  }
+}
+
+/* Define the glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.8),
+      0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(52, 152, 219, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.8),
+      0 0 160px rgba(52, 152, 219, 0.6), 0 0 40px rgba(52, 152, 219, 0.4);
+  }
+  75% {
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.8),
+      0 0 80px rgba(52, 152, 219, 0.6), 0 0 40px rgba(52, 152, 219, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.8),
+      0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(52, 152, 219, 0.4);
+  }
+}

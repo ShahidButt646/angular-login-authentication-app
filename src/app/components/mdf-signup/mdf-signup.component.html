@@ -1,0 +1,28 @@
+<div class="container-fluid py-5">
+    <h3 class="text-center">
+        Reactive Form (MDF)
+    </h3>
+    {{registrationForm.value | json}}
+    <form [formGroup]="registrationForm">
+        <div class="mb-3">
+            <label class="form-label">User Name</label>
+            <input formControlName="userName" [class.is-invalid]="registrationForm.get('userName')?.touched &&
+                registrationForm.get('userName')?.invalid" type="email" class="form-control"
+                aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text d-none">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input formControlName="password" [class.is-invalid]="registrationForm.get('password')?.touched &&
+            registrationForm.get('password')?.invalid" type="password" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Confirm Password</label>
+            <input formControlName="confirmPassword" [class.is-invalid]="registrationForm.get('confirmPassword')?.touched &&
+            registrationForm.get('confirmPassword')?.invalid" type="password" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+        <button (click)="loadApiData()" type="button" class="ms-2 btn btn-primary">Load API Data</button>
+    </form>
+</div>
